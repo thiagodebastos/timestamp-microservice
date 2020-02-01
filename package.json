@@ -8,9 +8,8 @@
     "build": "npm run clean && babel src -d dist",
     "now-build": "npm run build",
     "clean": "rimraf dist",
-    "db": "babel-node ./db/index.js",
     "dev": "nodemon --exec babel-node ./src/index.js",
-    "start": "npm run clean && npm run build && npm run db && cd dist && node index.js",
+    "start": "npm run clean && npm run build && cd dist && node index.js",
     "test": "jest",
     "test:e2e": "jest ./__test__ --runInBand"
   },
