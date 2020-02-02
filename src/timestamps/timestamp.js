@@ -18,10 +18,21 @@ export function buildMakeTimestamp({ dateValidator }) {
       natural: toNatural(validate(dateString))
     };
 
+    function validateUnix(unixDate) {
+      return new Date();
+    }
+
+    function validateUTC(UTCDate) {
+      return new Date();
+    }
+
+    function isDateNumber(date) {
+      return !!Number(date);
+    }
+
     function validate(date) {
       // TODO: split this function up, its doing more than just validating
-      const dateIsNumber = !!Number(date);
-
+      const dateIsNumber = isDateNumber(date);
       let isValidTimestamp;
 
       if (dateIsNumber) {
